@@ -369,3 +369,100 @@
   }
 }
 
+/* Practice Links Section */
+.practice-links {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: rgba(99, 102, 241, 0.03);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(99, 102, 241, 0.1);
+}
+
+.practice-links h4 {
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--primary);
+}
+
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.75rem;
+}
+
+.practice-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1rem;
+  background: var(--bg-card);
+  border: 2px solid rgba(99, 102, 241, 0.2);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.practice-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, transparent, rgba(99, 102, 241, 0.1));
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.practice-link:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.practice-link:hover::before {
+  opacity: 1;
+}
+
+.practice-link.gfg:hover {
+  border-color: #2f8d46;
+  box-shadow: 0 4px 12px rgba(47, 141, 70, 0.2);
+}
+
+.practice-link.leetcode:hover {
+  border-color: #ffa116;
+  box-shadow: 0 4px 12px rgba(255, 161, 22, 0.2);
+}
+
+.practice-link.hackerrank:hover {
+  border-color: #00ea64;
+  box-shadow: 0 4px 12px rgba(0, 234, 100, 0.2);
+}
+
+.link-icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.link-text {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 640px) {
+  .links-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .practice-link {
+    justify-content: center;
+  }
+}
+

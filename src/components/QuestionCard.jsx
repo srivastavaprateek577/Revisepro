@@ -188,6 +188,47 @@ ${commentEnd}
                             </div>
                         )}
 
+                        {question.practiceLinks && (question.practiceLinks.gfg || question.practiceLinks.leetcode || question.practiceLinks.hackerrank) && (
+                            <div className="practice-links">
+                                <h4>Practice on Other Platforms</h4>
+                                <div className="links-grid">
+                                    {question.practiceLinks.gfg && (
+                                        <a
+                                            href={question.practiceLinks.gfg}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="practice-link gfg"
+                                        >
+                                            <span className="link-icon">🟢</span>
+                                            <span className="link-text">GeeksforGeeks</span>
+                                        </a>
+                                    )}
+                                    {question.practiceLinks.leetcode && (
+                                        <a
+                                            href={question.practiceLinks.leetcode}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="practice-link leetcode"
+                                        >
+                                            <span className="link-icon">🟠</span>
+                                            <span className="link-text">LeetCode</span>
+                                        </a>
+                                    )}
+                                    {question.practiceLinks.hackerrank && (
+                                        <a
+                                            href={question.practiceLinks.hackerrank}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="practice-link hackerrank"
+                                        >
+                                            <span className="link-icon">🟢</span>
+                                            <span className="link-text">HackerRank</span>
+                                        </a>
+                                    )}
+                                </div>
+                            </div>
+                        )}
+
                         <div className="question-tags">
                             {question.tags && question.tags.map(tag => (
                                 <span key={tag} className="tag">{tag}</span>
